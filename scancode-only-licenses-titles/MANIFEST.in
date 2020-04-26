@@ -1,0 +1,10 @@
+graft src
+
+include setup.py
+imclude setup.cfg
+include .gitignore
+include MANIFEST.in
+include NOTICE
+include apache-2.0.LICENSE
+
+global-exclude *.py[co] __pycache__ *.*~
