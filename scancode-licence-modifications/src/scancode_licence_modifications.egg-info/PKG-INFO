@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: scancode-licence-modifications
+Version: 1.0.0
+Summary: A ScanCode post-scan plugin to list the files with no licenses
+Home-page: https://github.com/chamohan/scancode-plugins
+Author: Chander
+Author-email: chamohan@@amd.com
+License: Apache-2.0 with ScanCode acknowledgment
+Description: A ScanCode post-scan plugin to list the files with no licenses
+Keywords: scancode,plugin,post-scan
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Utilities
