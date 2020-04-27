@@ -15,7 +15,7 @@ from setuptools import setup
 desc = '''A ScanCode post-scan plugin to list the files with no licenses'''
 
 setup(
-    name='scancode-licenses-titles',
+    name='scancode-only-licenses-titles',
     version='1.0.0',
     license='Apache-2.0 with ScanCode acknowledgment',
     description=desc,
@@ -45,7 +45,7 @@ setup(
     ],
     entry_points={
         'scancode_post_scan': [
-            'nolicenses = no_licenses.no_licenses:NoLicenses',
+            'onlylicensestitles = only_licenses_titles.only_licenses_titles:OnlyLicensesTitles',
         ],
     }
 )
