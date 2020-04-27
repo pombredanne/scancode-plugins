@@ -1,3 +1,0 @@
-[scancode_post_scan]
-licensemodifications = licence_modifications.licence_modifications:LicenceModifications
-
