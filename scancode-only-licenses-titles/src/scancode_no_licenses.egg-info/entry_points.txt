@@ -1,3 +1,0 @@
-[scancode_post_scan]
-nolicenses = no_licenses.no_licenses:NoLicenses
-
