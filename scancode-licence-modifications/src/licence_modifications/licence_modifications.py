@@ -1,5 +1,5 @@
 # Copyright (c) 2019 AMD Inc. and others. All rights reserved.
-# http://amd.com and https://github.com/AMD/scancode-toolkit/
+# http://amd.com and https://github.com/chamohan/scancode-plugins/ 
 # The ScanCode plugin software is licensed under the Apache License version 2.0.
 # for any issue please email to chamohan@amd.com
 
