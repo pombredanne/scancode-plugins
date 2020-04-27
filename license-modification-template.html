@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ScanCode results</title>
+    <style type="text/css">
+      table {
+        border-collapse:collapse;
+        border: 1px solid gray;
+        margin-bottom: 20px;
+        width: 100%;
+      }
+      td {
+        padding: 5px 5px;
+        border-style: solid;
+        border-width: 1px;
+        overflow: hidden;
+      }
+      th {
+        padding:10px 5px;
+        border-style: solid;
+        border-width: 1px;
+        overflow: hidden;
+        border-color: gray;
+        color: #fff;
+        background-color: #5E81B7;
+      }
+      tr:nth-child(even) { background-color:#FFFFFF; }
+      tr:nth-child(odd) { background-color:#F9F9F9; }
+      tr:hover { background-color: #EEEEEE; }
+      * {
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: normal;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+
+    {% if files.infos %}
+    <table>
+      <caption>File Information</caption>
+      <thead>
+        <tr>
+          <th>path</th>
+          <th>type</th>
+          <th>name</th>
+          <th>extension</th>
+          <th>date</th>
+          <th>size</th>
+          <th>file_type</th>
+          <th>programming_language</th>
+          <th>is_binary</th>
+          <th>is_text</th>
+          <th>is_archive</th>
+          <th>is_media</th>
+          <th>is_source</th>
+          <th>is_script</th>
+          <th>license_modification</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for path, row in files.infos.items() %}
+            <tr>
+              <td>{{ path }}</td>
+              <td>{{ row.type }}</td>
+              <td>{{ row.name }}</td>
+              <td>{{ row.extension }}</td>
+              <td>{{ row.date }}</td>
+              <td>{{ row.size }}</td>
+              <td>{{ row.file_type }}</td>
+              <td>{{ row.programming_language }}</td>
+              <td>{{ row.is_binary }}</td>
+              <td>{{ row.is_text }}</td>
+              <td>{{ row.is_archive }}</td>
+              <td>{{ row.is_media }}</td>
+              <td>{{ row.is_source }}</td>
+              <td>{{ row.is_script }}</td>
+              <td>{{ row.licence_modifications.modinfo }}</td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+  </body>
+  <footer>
+  </footer>
+</html>
