@@ -65,5 +65,6 @@ class LicenceModifications(PostScanPlugin):
             for licensemodification in licence_score_match:
                 if licensemodification != '100.0':
                     modification_score = 100.00 - licensemodification
-                    resource.licence_modifications = {"modinfo": "license is %s percent modified "%(modification_score) } 
-                    codebase.save_resource(resource)
+                    if modification_score != 0.0:
+                        resource.licence_modifications = {"modinfo": "license is %s percent modified "%(modification_score) } 
+                        codebase.save_resource(resource)
