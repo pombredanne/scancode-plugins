@@ -17,13 +17,14 @@ from plugincode.post_scan import post_scan_impl
 from scancode import CommandLineOption
 from scancode import POST_SCAN_GROUP
 
-class NoLicenses(PostScanPlugin):
+class OnlyLicensesTitles(PostScanPlugin):
 
     """
-    Add the "no_licenses" attribute to a resouce if it does not contain any license 
+    Add the "only_licenses_titles" attribute to a resouce if it does not contain any license 
+
     """
 
-    resource_attributes = dict(no_licenses=attr.ib(default=attr.Factory(dict)))
+    resource_attributes = dict(only_licenses_titles=attr.ib(default=attr.Factory(dict)))
 
     sort_order = 9
 
@@ -36,11 +37,11 @@ class NoLicenses(PostScanPlugin):
     ]
 
     def is_enabled(self, only_licenses_titles, **kwargs):
-        return no_licenses
+        return only_licenses_titles 
 
     def process_codebase(self, codebase, only_licenses_titles, **kwargs):
         """
-        Populate a only_licenses_titles no_license mapping with attributes: filename, License 
+        Populate a only_licenses_titles only_licenses_titles mapping 
         """
         if not self.is_enabled(only_licenses_titles):
             return
@@ -50,15 +51,15 @@ class NoLicenses(PostScanPlugin):
                 continue
 
             try:
-                resource_only_licenses_titles = set([entry.get('short_name') for entry in resource.licenses])
+                resource_start_line = set([entry.get('start_line') for entry in resource.licenses])
+                resource_end_line   = set([entry.get('end_line') for entry in resource.licenses])
+         
 
             except AttributeError:
-                # add no_licenses regardless if there is license info or not
-                resource.only_licenses_titles = {} 
+                resource.only_licenses_titles = {}
                 codebase.save_resource(resource)
                 continue
 
-            for license in resource_only_licenses_titles:
-                if license:
-                    resource.only_licenses_titles = "%s is Present"%(license) 
+            for singlelinetitles in resource_start_line:
+                    resource.only_licenses_titles = {"LineStart": resource_start_line, "LineEnd": resource_end_line}
                     codebase.save_resource(resource)

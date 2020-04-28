@@ -22,7 +22,7 @@ setup(
     long_description=desc,
     author='Chander',
     author_email='chamohan@@amd.com',
-    url='https://github.com/amd/scancode-toolkit/plugins/scancode-categories',
+    url='https://github.com/chamohan/scancode-plugins',
     packages=find_packages('src'),
     package_dir={'': 'src'},
     py_modules=[splitext(basename(path))[0] for path in glob('src/*.py')],
