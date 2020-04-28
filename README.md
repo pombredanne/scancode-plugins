@@ -19,4 +19,4 @@ Go to the Plugin Directory
 # To Create HTML reporved of approved, not approved and license modification html report
 
 
-scancode -clpeui  --package --processes 64 --classify --verbose --full-root --json-pp roctracer.json ../roctracer  --license-policy ../amd_licence_policy.yml  --summary --summary-with-details --license-text --license-text-diagnostics --is-license-text  --license-diag --no-licenses --licence-modifications --custom-output white-black-report.html --custom-template white-black.html
+scancode -clpeui --package --processes 64 --classify --verbose --full-root --json-pp roctracer.json ../roctracer --liceicy ../amd_licence_policy.yml --summary --summary-with-details --license-text --license-text-diagnostics --is-license-text --license-diag --no-licenses --licence-modifications --custom-output white-black-report.html --custom-template white-black-template.html
