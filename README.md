@@ -20,3 +20,12 @@ Go to the Plugin Directory
 
 
 scancode -clpeui --package --processes 64 --classify --verbose --full-root --json-pp roctracer.json ../roctracer --liceicy ../amd_licence_policy.yml --summary --summary-with-details --license-text --license-text-diagnostics --is-license-text --license-diag --no-licenses --licence-modifications --custom-output white-black-report.html --custom-template white-black-template.html
+
+
+# To check the overall status
+Run scancodestatus.py with json results
+
+For example : 
+scancodestatus.py roctracer.json
+
+
